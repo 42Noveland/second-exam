@@ -2,7 +2,6 @@ package com.example.mediaplayer;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
@@ -129,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case  R.id.bu_exit:
                     Log.e(N,"exit");
+                    mediaPlayer.stop();
                     finish();
                     break;
                 case R.id.next:
@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!mediaPlayer.isPlaying()) {
                         onePlaying = --onePlaying % playList.size();
                     }
+                    Log.e("abc","bc"+onePlaying);
                     prepareMedia();
                     break;
                 default:
@@ -197,6 +198,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         mediaPlayer.stop();
         super.onDestroy();
-
     }
 }
