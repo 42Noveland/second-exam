@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         lastsong.setOnClickListener(onClick);
         songName = findViewById(R.id.songtitle);
 
+
+        OnSeekBarChangeControl onSeekBarChangeControl  = new OnSeekBarChangeControl();
+        seekBar.setOnSeekBarChangeListener(onSeekBarChangeControl);
         animator = ObjectAnimator.ofFloat(imageView,"rotation",0,360F);
         animator.setDuration(10000);
         animator.setInterpolator(new LinearInterpolator());
